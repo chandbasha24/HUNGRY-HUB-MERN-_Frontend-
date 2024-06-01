@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/HUNGRY-HUB-MERN/static/css/main.e317521a.css",
+    "main.js": "/HUNGRY-HUB-MERN/static/js/main.eccfbdd6.js",
+    "static/js/453.419a5d54.chunk.js": "/HUNGRY-HUB-MERN/static/js/453.419a5d54.chunk.js",
+    "static/media/login4.jpg": "/HUNGRY-HUB-MERN/static/media/login4.d8caa876e7a8afdbb8bf.jpg",
+    "index.html": "/HUNGRY-HUB-MERN/index.html",
+    "main.e317521a.css.map": "/HUNGRY-HUB-MERN/static/css/main.e317521a.css.map",
+    "main.eccfbdd6.js.map": "/HUNGRY-HUB-MERN/static/js/main.eccfbdd6.js.map",
+    "453.419a5d54.chunk.js.map": "/HUNGRY-HUB-MERN/static/js/453.419a5d54.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e317521a.css",
+    "static/js/main.eccfbdd6.js"
+  ]
+}

@@ -1,14 +1,25 @@
 {
   "name": "client",
+  "proxy": "http://localhost:8080",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "antd": "^5.17.4",
+    "axios": "^1.7.2",
+    "braintree-web-drop-in-react": "^1.2.1",
+    "moment": "^2.30.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-helmet": "^6.1.0",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^5.2.1",
+    "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
+    "react-toastify": "^10.0.5",
+    "styled-components": "^6.1.11",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -34,5 +45,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "vercel": "^34.2.4"
   }
 }

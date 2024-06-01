@@ -1,6 +1,6 @@
 /* ===================================
 ========= register page  */
-.form-container {
+/* .form-container {
     margin-top: 60px;
     display: flex;
     align-items: center;
@@ -9,7 +9,7 @@
     flex-direction: column;
     background-color: #ffdee9;
     background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
-}
+} */
 
 .form-container form {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -64,7 +64,7 @@
 
 
 .form-container {
-    background-image: url('/Users/panya/OneDrive/Desktop/Hungry-Hub/client/public/login4.jpg');
+    background-image: url('/Users/panya/OneDrive/Desktop/React/mern/client/public/login4.jpg');
     background-size: cover;
     background-position: center;
     padding: 1rem;

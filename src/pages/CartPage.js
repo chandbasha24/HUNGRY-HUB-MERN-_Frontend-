@@ -51,11 +51,11 @@ const RemoveButton = styled.button`
 `;
 
 const PrimaryButton = styled.button`
-  background-color: #007bff;
+  background-color: #green;
   border: none;
   color: white;
   &:hover {
-    background-color: #0056b3;
+    background-color: #green;
   }
 `;
 
@@ -75,6 +75,7 @@ const CartPage = () => {
   const [loading, setLoading] = useState(false);
   const [instance, setInstance] = useState();
   const [dropInReady, setDropInReady] = useState(false);
+  const [showPayment, setShowPayment] = useState(false); // New state variable
   const navigate = useNavigate();
 
   const totalPrice = () => {
@@ -189,7 +190,11 @@ const CartPage = () => {
                 <h5>{auth?.user?.address}</h5>
                 <OutlineWarningButton
                   className="btn btn-outline-warning"
-                  onClick={() => navigate("/dashboard/user/profile", { state: { from: "/cart" } })}
+                  onClick={() =>
+                    navigate("/dashboard/user/profile", {
+                      state: { from: "/cart" },
+                    })
+                  }
                 >
                   Update Address
                 </OutlineWarningButton>
@@ -199,7 +204,11 @@ const CartPage = () => {
                 {auth?.token ? (
                   <OutlineWarningButton
                     className="btn btn-outline-warning"
-                    onClick={() => navigate("/dashboard/user/profile", { state: { from: "/cart" } })}
+                    onClick={() =>
+                      navigate("/dashboard/user/profile", {
+                        state: { from: "/cart" },
+                      })
+                    }
                   >
                     Update Address
                   </OutlineWarningButton>
@@ -222,24 +231,36 @@ const CartPage = () => {
                 ""
               ) : (
                 <>
-                  <h6>Give the dummy credentials....</h6>
-                  <DropIn
-                    options={{
-                      authorization: clientToken,
-                    }}
-                    onInstance={(instance) => {
-                      setInstance(instance);
-                      setDropInReady(true);
-                    }}
-                  />
-                  {dropInReady && (
+                  {!showPayment && (  ///here not showpayment before clciking the button
                     <PrimaryButton
-                      className="btn btn-primary mt-2"
-                      onClick={handlePayment}
-                      disabled={loading || !instance || !auth?.user?.address}
+                      className="btn btn-success mt-1"
+                      onClick={() => setShowPayment(true)}
                     >
-                      {loading ? "Processing..." : "Make Payment"}
+                     {`Order ${cart.length} ${cart.length === 1 ? "item" : "items"}`}
                     </PrimaryButton>
+                  )}
+                  {showPayment && (
+                    <>
+                      <h6>Give the dummy credentials....</h6>
+                      <DropIn
+                        options={{
+                          authorization: clientToken,
+                        }}
+                        onInstance={(instance) => {
+                          setInstance(instance);
+                          setDropInReady(true);
+                        }}
+                      />
+                      {dropInReady && (
+                        <PrimaryButton
+                          className="btn btn-primary mt-2"
+                          onClick={handlePayment}
+                          disabled={loading || !instance || !auth?.user?.address}
+                        >
+                          {loading ? "Processing..." : "Make Payment"}
+                        </PrimaryButton>
+                      )}
+                    </>
                   )}
                 </>
               )}
